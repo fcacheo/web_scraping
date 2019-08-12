@@ -1,0 +1,31 @@
+from flask import Flask
+app = Flask(__name__)
+import csv
+
+@app.route('/')
+def index():
+    return """ <!DOCTYPE HTML>
+<head>
+<title> Web Scraping</title>
+</head>
+<body>
+<center><div class="row">
+<h1 align="center">Web Scraping Sports Data</h1>
+<p> Click logo to select sport stats<p>
+<a href="http://localhost:8000/Desktop/mlb_stats.html" target="blank">
+<img class="img-responsive" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Major_League_Baseball_logo.svg/1200px-Major_League_Baseball_logo.svg.png" alt="MLB logo" style="height: 200px;max-size:20%;"></a>
+<a href="http://localhost:8000/Desktop/nba.html" target="blank">
+<img class="img-responsive" src="https://seeklogo.net/wp-content/uploads/2014/09/NBA-logo-big.png" alt="NBA Logo" style="height:200px; max-width: 500%; "/></a>
+<a href="http://localhost:8000/Downloads/mls.html" target="blank">
+<img class="img-responsive" src="https://vancouver-mp7static.mlsdigital.net/styles/image_landscape/s3/mp6/image_nodes/2015/03/mlslogo.png?XPZ6YULYycqh.4GuBModI.tPXEsEYQZO&itok=civ8A8oW" alt="MLS Logo" style="height:200px; max-width: 100%;"/></a>
+<a href="http://localhost:8000/Desktop/nfl.html" target="blank">
+<img class="img-responsive" src="https://i.pinimg.com/originals/71/7c/14/717c14c2d2de983f9bddffea12746ec8.jpg" alt="NFL Logo" style="height:200px; max-width: 100%;"/></a>
+<a href="http://localhost:8000/Desktop/nhl.html" target="blank">
+<img class="img-responsive" src="https://nhl.bamcontent.com/images/photos/278016876/1024x576/cut.jpg" alt="NHL Logo" style="height:200px; max-width: 100%;p padding-top:30px;"/></a>
+</div>
+</body>
+
+
+"""
+if __name__ == "__main__":
+    app.run(debug=True, host='0.0.0.0', port=5000)
